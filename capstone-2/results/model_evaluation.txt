@@ -1,0 +1,5 @@
+=== Model Evaluation (Daegu Apartment) ===
+Timestamp : 20251020_161010
+MAE  : 32909.4492
+RMSE : 204.4148
+R�   : 0.8467
