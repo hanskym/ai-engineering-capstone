@@ -15,7 +15,7 @@ class HospitalManagementSystem:
                 host='localhost',
                 database='hospital_management',
                 user='root',  # Ganti sesuai username MySQL Anda
-                password='admin123!'   # Ganti sesuai password MySQL Anda
+                password='admin123'   # Ganti sesuai password MySQL Anda
             )
             self.cursor = self.connection.cursor()
             print("✅ Koneksi database berhasil!")

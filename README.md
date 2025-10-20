@@ -1,2 +1,1 @@
-# capstone-1-patient-data
-
+# ai-engineering-capstone
