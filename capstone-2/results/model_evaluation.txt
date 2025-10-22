@@ -1,5 +1,7 @@
-=== Model Evaluation (Daegu Apartment) ===
-Timestamp : 20251020_161010
-MAE  : 32909.4492
-RMSE : 204.4148
-R�   : 0.8467
+=== Model Evaluation on Full Data (Daegu Apartment) ===
+Timestamp : 20251022_201550
+Model Type: RandomForestRegressor
+MAE  : 32,978.35
+RMSE : 41,806.65
+R�   : 0.8466
+MAPE : 17.70%
