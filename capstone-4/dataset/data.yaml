@@ -1,0 +1,13 @@
+train: ./train/images
+val: ./valid/images
+test: ./test/images
+
+nc: 3
+names: ["bus", "car", "van"]
+
+roboflow:
+  workspace: personal-project-kej16
+  project: vehicle-detection-vznzd-dkl8g
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/personal-project-kej16/vehicle-detection-vznzd-dkl8g/dataset/1

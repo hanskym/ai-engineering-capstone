@@ -201,3 +201,8 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Ignore dataset folder in capstone-4 project
+capstone-4/dataset/test
+capstone-4/dataset/train
+capstone-4/dataset/valid
