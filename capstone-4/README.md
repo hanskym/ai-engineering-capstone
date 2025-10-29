@@ -1,51 +1,30 @@
-## Capstone 4 Deployment
+# Vehicle Detection using YOLOv8
 
-Proyek **Capstone 4** telah berhasil dideploy menggunakan **Streamlit Cloud**.
+A deep learning project using **YOLOv8s** to detect and count **buses**, **cars**, and **vans** from images. Trained in **Google Colab** with data from **Roboflow Universe**, the resulting model (`best_vehicle_detector.pt`) powers an interactive **Streamlit web app** for real-time vehicle detection.
 
--   **Repository (Streamlit App):** [https://github.com/hanskym/streamlit-vehicle-detection](https://github.com/hanskym/streamlit-vehicle-detection)
--   **Aplikasi Live:** [https://vehicle-detection-hsky.streamlit.app](https://vehicle-detection-hsky.streamlit.app)
+## Deployment
 
-Repository ini berisi `notebook.ipynb` yang dijalankan menggunakan **Google Colab** untuk menghasilkan output **model detection** (`best_vehicle_detector.pt`), yang kemudian digunakan oleh aplikasi **Streamlit** yang dihosting pada repository Streamlit App.
+-   **Streamlit App Repository:** [https://github.com/hanskym/streamlit-vehicle-detection](https://github.com/hanskym/streamlit-vehicle-detection)
+-   **Live App:** [https://vehicle-detection-hsky.streamlit.app](https://vehicle-detection-hsky.streamlit.app)
+
+The **Streamlit App Repository** contains deployment files for the web application.
 
 ## Dataset
 
-Dataset digunakan untuk **vehicle detection** dan diambil melalui **Roboflow API** di Google Colab.
+The dataset for the **vehicle detection** task was retrieved from **Roboflow Universe** using the **Roboflow API** in Google Colab.
 
--   **Sumber Dataset:** [Roboflow Universe – Vehicle Detection](https://universe.roboflow.com/personal-project-kej16/vehicle-detection-vznzd-dkl8g)
--   **Total Gambar:** ~9,000
--   **Kelas:** Berbagai jenis kendaraan
--   **Format Anotasi:** YOLO (`*.txt`)
--   **Format Gambar:** JPG/JPEG
+-   **Dataset Source:** [Roboflow Universe – Vehicle Detection](https://universe.roboflow.com/personal-project-kej16/vehicle-detection-vznzd-dkl8g)
+-   **Total Images:** ~9,000
+-   **Classes:** 3 classes (bus, car, van)
+-   **Annotation Format:** YOLO (\*.txt)
+-   **Image Format:** JPG/JPEG
 
-### Struktur Dataset
+## Environment Setup
 
+Before running the notebook in **Google Colab**, set your Roboflow API key in the environment:
+
+```bash
+# --- Roboflow API Key ---
+# API key for accessing the dataset from Roboflow
+ROBOFLOW_API_KEY=""
 ```
-dataset/
-├── train/
-│   ├── images/         # Training images
-│   └── labels/         # YOLO format annotations for training
-├── valid/
-│   ├── images/         # Validation images
-│   └── labels/         # YOLO format annotations for validation
-└── test/
-    ├── images/         # Test images
-    └── labels/         # YOLO format annotations for test
-```
-
-### Contoh Pengambilan Dataset di Google Colab
-
-```python
-from roboflow import Roboflow
-
-# ⚠️ Ganti dengan API Key Anda
-ROBOFLOW_API_KEY = userdata.get('ROBOFLOW_API_KEY')
-
-rf = Roboflow(api_key=ROBOFLOW_API_KEY)
-project = rf.workspace("personal-project-kej16").project("vehicle-detection-vznzd-dkl8g")
-dataset = project.version(1).download("yolov8")
-
-DATASET_PATH = dataset.location
-print(f"✓ Dataset berhasil didownload! Lokasi: {DATASET_PATH}")
-```
-
-Dataset ini digunakan di notebook Colab untuk melatih model YOLO dan menghasilkan file model `best_vehicle_detector.pt` yang selanjutnya digunakan oleh aplikasi Streamlit.
